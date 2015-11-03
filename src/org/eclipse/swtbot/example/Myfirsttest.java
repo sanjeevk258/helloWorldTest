@@ -46,7 +46,7 @@ public class Myfirsttest {
 		bot.button("Finish").click();
 		bot.waitUntil(Conditions.shellIsActive("Open Associated Perspective?"));
 		bot.button("Yes").click();
-
+		System.out.println("Test.............c2");
 		System.out.println("Test.............2");
 		// FIXME: assert that the project is actually created, for later
 	}
