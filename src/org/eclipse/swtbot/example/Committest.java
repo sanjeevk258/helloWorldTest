@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
+import org.eclipse.swtbot.swt.finder.widgets.SWTBotShell;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -25,10 +26,15 @@ public class Committest {
 		System.out.println("inside Commit Test.............");
 		//bot.toolbarButtonWithTooltip("Git").click();
 
-		
 			bot.menu("Window").menu("Show View").menu("Other...").click();
 			System.out.println("inside show view menu.............");
-			bot.tree().getTreeItem("Git").getNode("Git Repositories").select();
+			
+//			SWTBotShell shell = bot.shell("Window");
+//			shell.activate();
+			
+			bot.tree().expandNode("Git").select("Git Repositories");
+//			bot.button("Next >").click();
+//			bot.tree().getTreeItem("Git").getNode("Git Repositories").select();
 			System.out.println("inside selecting git repository from view.............");
 			bot.button("OK").click();
 		
