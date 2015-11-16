@@ -15,24 +15,31 @@ public class Committest {
 	@BeforeClass
 	public static void beforeClass() throws Exception {
 		bot = new SWTWorkbenchBot();
-		System.out.println("Test123.............started");
-		//bot.viewByTitle("Git").close();
-		System.out.println("Test.............010");
+		System.out.println("Commit Test.............started");
+		
 	}
  
 	@Test
 	public void canCommitTest() throws Exception {
 
-		bot.toolbarButtonWithTooltip("Git").click();
+		System.out.println("inside Commit Test.............");
+		//bot.toolbarButtonWithTooltip("Git").click();
 
+		
+			bot.menu("Window").menu("Show View").menu("Other...").click();
+			System.out.println("inside show view menu.............");
+			bot.tree().getTreeItem("Git").getNode("Git Repositories").select();
+			System.out.println("inside selecting git repository from view.............");
+			bot.button("OK").click();
 		
 			bot.viewByTitle("Git Repositories").show();
 			bot.tree().getTreeItem("helloWorldTest [head] - C:/Users/sanjeev_kumar/git/helloWorldTest/.git").select();
-			bot.contextMenu("Commit...").click();
-			bot.styledText().setText("udapting comit test");
+			bot.menu("Commit...").click();
+			bot.styledText().setText("udapting comit test 123");
 			bot.tree().getTreeItem("").select();
 			bot.button("Commit and Push").click();
 		
+			System.out.println("Commit Test.............push and click");
 	}
 	
 	@AfterClass
