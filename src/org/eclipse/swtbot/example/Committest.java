@@ -24,9 +24,15 @@ public class Committest {
 	public void canCommitTest() throws Exception {
 
 		bot.toolbarButtonWithTooltip("Git").click();
+
 		
-	
-		// FIXME: assert that the project is actually created, for later
+			bot.viewByTitle("Git Repositories").show();
+			bot.tree().getTreeItem("helloWorldTest [head] - C:/Users/sanjeev_kumar/git/helloWorldTest/.git").select();
+			bot.contextMenu("Commit...").click();
+			bot.styledText().setText("udapting comit test");
+			bot.tree().getTreeItem("").select();
+			bot.button("Commit and Push").click();
+		
 	}
 	
 	@AfterClass
