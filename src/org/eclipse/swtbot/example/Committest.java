@@ -23,27 +23,21 @@ public class Committest {
 	@Test
 	public void canCommitTest() throws Exception {
 
-		System.out.println("inside Commit Test.............");
-		//bot.toolbarButtonWithTooltip("Git").click();
-
+		System.out.println("inside Commit Test.............started");
 			bot.menu("Window").menu("Show View").menu("Other...").click();
-			System.out.println("inside show view menu.............");
-			
-//			SWTBotShell shell = bot.shell("Window");
-//			shell.activate();
-			
-			bot.tree().expandNode("Git").select("Git Repositories");
-//			bot.button("Next >").click();
-//			bot.tree().getTreeItem("Git").getNode("Git Repositories").select();
-			System.out.println("inside selecting git repository from view.............");
+			System.out.println("show view other clciked.............");
+			bot.tree().getTreeItem("Git").getNode("Git Repositories").select("");
+			System.out.println("get node selected.............");
 			bot.button("OK").click();
-		
-			bot.viewByTitle("Git Repositories").show();
-			bot.tree().getTreeItem("helloWorldTest [head] - C:/Users/sanjeev_kumar/git/helloWorldTest/.git").select();
+			bot.tree().getTreeItem("/helloWorldTest [head] - C:/Users/sanjeev_kumar/git/helloWorldTest/.git").expand();
+			bot.tree().getTreeItem("/helloWorldTest [head] - C:/Users/sanjeev_kumar/git/helloWorldTest/.git").select();
 			bot.menu("Commit...").click();
-			bot.styledText().setText("udapting comit test 123");
+			bot.styledText().setText("commiting new commit test");
+			bot.tree().getTreeItem("").select();
 			bot.tree().getTreeItem("").select();
 			bot.button("Commit and Push").click();
+			bot.button("OK").click();
+		
 		
 			System.out.println("Commit Test.............push and click");
 	}
