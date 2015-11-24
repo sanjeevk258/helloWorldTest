@@ -60,28 +60,48 @@ public class CopyOfCommittest {
 			System.out.println("6");
 			bot.button("Finish").click();
 			System.out.println("7");
-			sleep();
-			bot.tree().getTreeItem("> helloWorldTest [origin/head bd0e566] - C:\\Users\\rajesh_kumarvg\\git\\helloWorldTest\\.git").select();
+			bot.sleep(2000);
+//			bot.viewByTitle("Git Repositories").show();
+//			bot.tree().getTreeItem("> helloWorldTest [origin/head 7e8df9c] - C:\\Users\\rajesh_kumarvg\\git\\helloWorldTest\\.git").select();
+//			System.out.println("8");
+//			sleep();
+//			//bot.contextMenu("Import Projects...").click();
+//			SWTBotMenu menu =
+//		            new SWTBotMenu(ContextMenuHelper.contextMenu(bot.tree(), "Import Projects..."));
+//			System.out.println("9");
+//			menu.click();
+//			sleep();
+//			System.out.println("10");
+//			bot.button("Next >").click();
+//			System.out.println("11");
+//			bot.button("Finish").click();
+//			System.out.println("12");
+			bot.menu("File").menu("Import...").click();
 			System.out.println("8");
-			sleep();
-			//bot.contextMenu("Import Projects...").click();
-			SWTBotMenu menu =
-		            new SWTBotMenu(ContextMenuHelper.contextMenu(bot.tree(), "Import Projects..."));
+			bot.text().setText("Projects from Git");
 			System.out.println("9");
-			menu.click();
-			sleep();
+			//bot.tree().getTreeItem("Git").getNode("Projects from Git").select();
 			System.out.println("10");
 			bot.button("Next >").click();
 			System.out.println("11");
-			bot.button("Finish").click();
+			bot.tree().getTreeItem("Existing local repository").select();
 			System.out.println("12");
-			sleep();
-			sleep();
-			sleep();
-			sleep();
-			sleep();
-			sleep();
-		}
+			bot.button("Next >").click();
+			System.out.println("13");
+			bot.text().setText("helloWorldTest");
+			System.out.println("14");
+			bot.tree().getTreeItem("helloWorldTest").select();
+			System.out.println("15");
+			bot.button("Next >").click();
+			System.out.println("16");
+			bot.button("Next >").click();
+			System.out.println("17");
+			bot.button("Finish").click();
+			System.out.println("18");
+			bot.sleep(2000);
+			//bot.sleep(2000);
+			//bot.sleep(2000);
+}
 	
 	
 	
