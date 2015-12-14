@@ -11,5 +11,10 @@ public class RCPPTest1 {
 		fail("Not yet implemented1");
 	}
 	
+	
+	@Test
+	public void test1() {
+		fail("Not yet implemented1");
+	}
 
 }
