@@ -9,6 +9,10 @@ public class RCPP11test {
 	@Test
 	public void test() {
 		fail("Not yet implemented");
+		
+		System.out.println("this is test file");
 	}
+	
+	
 
 }
